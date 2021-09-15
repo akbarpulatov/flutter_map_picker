@@ -1,6 +1,6 @@
 name: map_picker
 description: A lovely Flutter package for creating pin in map center and animate it with a map movement so the user can select his location.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/akbarpulatov/flutter_map_picker
 repository: https://github.com/akbarpulatov/flutter_map_picker
 

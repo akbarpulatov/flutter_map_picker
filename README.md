@@ -4,6 +4,7 @@
 
 A Vendor-free map Library for Easy and Quick Usage.
 
+Follow the steps to integrate Google Maps (https://pub.dev/packages/google_maps_flutter)
 
 The source code is **100% Dart**, and everything resides in the [/lib](https://github.com/akbarpulatov/flutter_map_picker/tree/master/lib) folder.
 
