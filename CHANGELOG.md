@@ -1,3 +1,7 @@
+## 0.0.3
+
+updated docs with class definitions
+
 ## 0.0.2
 
 updated docs

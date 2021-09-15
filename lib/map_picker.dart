@@ -2,15 +2,31 @@ library map_picker;
 
 import 'package:flutter/material.dart';
 
+/// Map picker is controlled with MapPickerController. Map pin is lifted up
+/// whenever mapMoving() is called, and will be down when mapFinishedMoving()
+/// is called.
 class MapPickerController {
   Function? mapMoving;
   Function? mapFinishedMoving;
 }
 
+/// MapPicker widget is main widget that gets map as a child.
+/// It does not restrict user from using maps other than google map.
+/// [MapPicker] is controlled with [MapPickerController] class object
 class MapPicker extends StatefulWidget {
+  /// Map widget, Google, Yandex Map or any other map can be used, see example
   final Widget child;
+
+  /// Map pin widget in the center of the screen. [iconWidget] is used with
+  /// animation controller
   final Widget? iconWidget;
+
+  /// default value is true, defines, if there is a dot, at the bottom of the pin
   final bool showDot;
+
+  /// [MapPicker] can be controller with [MapPickerController] object.
+  /// you can call mapPickerController.mapMoving!() and
+  /// mapPickerController.mapFinishedMoving!() for controlling the Map Pin.
   final MapPickerController mapPickerController;
 
   const MapPicker({
@@ -52,12 +68,15 @@ class _MapPickerState extends State<MapPicker>
     ));
   }
 
+  /// Start of animation when map starts dragging by user, checks the state
+  /// before firing animation, thus optimizing for rendering purposes
   void mapMoving() {
     if (!animationController.isAnimating && !animationController.isCompleted) {
       animationController.forward();
     }
   }
 
+  /// down the Pin whenever the map is released and goes to idle position
   void mapFinishedMoving() {
     animationController.reverse();
   }
